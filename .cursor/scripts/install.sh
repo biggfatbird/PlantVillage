@@ -18,3 +18,8 @@ npm --version
 
 # Smoke check that the runtime can execute project-local logic when added later.
 node -e "console.log('PlantVillage install: OK')"
+
+if command -v python3 >/dev/null 2>&1; then
+  python3 -m pip install --disable-pip-version-check -r requirements.txt
+  python3 -m pytest
+fi

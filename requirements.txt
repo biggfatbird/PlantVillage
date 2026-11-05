@@ -1,0 +1,16 @@
+# This run used the CPU wheels torch==2.15.0+cpu and torchvision==0.29.2+cpu
+# from https://download.pytorch.org/whl/cpu. A CUDA build is fine if one is
+# already installed; the experiment code selects CPU when CUDA is absent.
+torch>=2.2
+torchvision>=0.17
+datasets>=2.19
+huggingface_hub>=0.23
+imagehash>=4.3
+scikit-learn>=1.4
+matplotlib>=3.8
+pandas>=2.2
+Pillow>=10.0
+scipy>=1.11
+numpy>=1.26
+tqdm>=4.66
+pytest>=8.0
