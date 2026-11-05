@@ -19,7 +19,8 @@ from torchvision import transforms
 from ppce.models import IMAGENET_MEAN, IMAGENET_STD
 
 
-POLICIES = ("none", "weak", "strong", "ppce")
+POLICIES = ("none", "weak", "strong", "ppce", "unconstrained", "constrained", "gated")
+EDIT_MODES = {"unconstrained": "unconstrained", "constrained": "constrained", "gated": "gated"}
 
 
 def build_transform(policy: str, *, train: bool, image_size: int = 224) -> transforms.Compose:
@@ -71,7 +72,12 @@ class ManifestDataset(Dataset):
     def __getitem__(self, index: int) -> tuple[torch.Tensor, int]:
         row = self.frame.iloc[index]
         image = Image.open(row["path"]).convert("RGB")
-        if self.train and self.ppce_probability > 0:
+        if self.train and self.policy in EDIT_MODES:
+            from ppce.confidence_edit import confidence_gated_edit
+
+            decision = confidence_gated_edit(image, seed=index, mode=EDIT_MODES[self.policy])
+            image = Image.fromarray(decision.image)
+        elif self.train and self.ppce_probability > 0:
             import random
 
             from ppce.editing import lesion_preserving_edit

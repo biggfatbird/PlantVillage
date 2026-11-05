@@ -1,0 +1,113 @@
+{
+  "plantvillage_id_test_disease": {
+    "unconstrained": {
+      "n": 204,
+      "emitted_rate": 1.0,
+      "accepted_rate": 0.0,
+      "reason_counts": {
+        "unconstrained_no_preservation_check": 204
+      },
+      "mean_core_pixel_match": 0.0,
+      "mean_uncertain_pixel_match": 0.0,
+      "mean_environment_mae": 60.04314563211506,
+      "mean_leaf_body_mae": 11.877806271662287,
+      "mean_environment_mae_when_emitted": 60.04314563211506
+    },
+    "constrained": {
+      "n": 204,
+      "emitted_rate": 1.0,
+      "accepted_rate": 0.7303921568627451,
+      "reason_counts": {
+        "constrained_emitted": 149,
+        "evidence_not_recovered": 46,
+        "no_high_confidence_evidence": 16
+      },
+      "mean_core_pixel_match": 1.0,
+      "mean_uncertain_pixel_match": 1.0,
+      "mean_environment_mae": 60.04314563211506,
+      "mean_leaf_body_mae": 11.877806271662287,
+      "mean_resegmentation_core_recall": 0.9367821156558611,
+      "mean_environment_mae_when_emitted": 60.04314563211506
+    },
+    "gated": {
+      "n": 204,
+      "emitted_rate": 0.7303921568627451,
+      "accepted_rate": 0.7303921568627451,
+      "reason_counts": {
+        "accepted": 149,
+        "evidence_not_recovered": 46,
+        "no_high_confidence_evidence": 16
+      },
+      "mean_core_pixel_match": 1.0,
+      "mean_uncertain_pixel_match": 1.0,
+      "mean_environment_mae": 45.09931589955991,
+      "mean_leaf_body_mae": 8.673051511851908,
+      "mean_resegmentation_core_recall": 0.9367821156558611,
+      "mean_environment_mae_when_emitted": 61.74671438597464
+    }
+  },
+  "zenodo_apple": {
+    "unconstrained": {
+      "n": 75,
+      "emitted_rate": 1.0,
+      "accepted_rate": 0.0,
+      "reason_counts": {
+        "unconstrained_no_preservation_check": 75
+      },
+      "mean_core_pixel_match": 0.0,
+      "mean_uncertain_pixel_match": 0.0,
+      "mean_environment_mae": 60.39583744306122,
+      "mean_leaf_body_mae": 11.878654499169302,
+      "mean_gt_lesion_pixel_match": 0.0,
+      "mean_gt_lesion_pixel_match_when_emitted": 0.0,
+      "n_emitted_with_gt": 75,
+      "mean_environment_mae_when_emitted": 60.39583744306122
+    },
+    "constrained": {
+      "n": 75,
+      "emitted_rate": 1.0,
+      "accepted_rate": 0.7866666666666666,
+      "reason_counts": {
+        "constrained_emitted": 59,
+        "evidence_not_recovered": 11,
+        "no_high_confidence_evidence": 6
+      },
+      "mean_core_pixel_match": 1.0,
+      "mean_uncertain_pixel_match": 1.0,
+      "mean_environment_mae": 60.39583744306122,
+      "mean_leaf_body_mae": 11.878654499169302,
+      "mean_gt_lesion_pixel_match": 0.19544245084092515,
+      "mean_resegmentation_core_recall": 0.956229051352983,
+      "mean_gt_lesion_pixel_match_when_emitted": 0.19544245084092515,
+      "n_emitted_with_gt": 75,
+      "mean_environment_mae_when_emitted": 60.39583744306122
+    },
+    "gated": {
+      "n": 75,
+      "emitted_rate": 0.7866666666666666,
+      "accepted_rate": 0.7866666666666666,
+      "reason_counts": {
+        "accepted": 59,
+        "evidence_not_recovered": 11,
+        "no_high_confidence_evidence": 6
+      },
+      "mean_core_pixel_match": 1.0,
+      "mean_uncertain_pixel_match": 1.0,
+      "mean_environment_mae": 48.26134887992653,
+      "mean_leaf_body_mae": 9.33728121266044,
+      "mean_gt_lesion_pixel_match": 0.3851380332131282,
+      "mean_resegmentation_core_recall": 0.956229051352983,
+      "mean_gt_lesion_pixel_match_when_emitted": 0.21839580493194255,
+      "n_emitted_with_gt": 59,
+      "mean_environment_mae_when_emitted": 61.34917230499135
+    }
+  },
+  "zenodo_mask_encoding": "0 background, 255 leaf, any other value lesion. Checked visually on test/scab_1 and test/cedar_rust_1.",
+  "heuristic_core_against_zenodo_lesion": {
+    "n": 75,
+    "mean_recall": 0.11731108916377177,
+    "mean_precision": 0.3040644765586224,
+    "n_precision": 74,
+    "mean_lesion_fraction": 0.03649312337239583
+  }
+}
