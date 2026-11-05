@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Local datasets and model weights are large and are not part of the source tree.
+data/
+results/checkpoints/
+*.zip
+
+# Editor and OS
+.DS_Store
+.ipynb_checkpoints/
